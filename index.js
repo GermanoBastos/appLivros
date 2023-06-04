@@ -39,7 +39,7 @@ app.get('/livros', (req, res) => {
   }
 });
 
-app.post('/livros', (req, res) => {
+app.post('/', (req, res) => {
   try {
     const dadosAtuais = fs.readFileSync(path.join(__dirname, 'livros.json'));
     const livrosAtuais = JSON.parse(dadosAtuais);
