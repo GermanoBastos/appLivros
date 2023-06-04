@@ -17,18 +17,18 @@ function getNextId(livros) {
   return lastLivro.id + 1;
 }
 
-app.get('/', (req, res) => {
-  try {
-    const dados = fs.readFileSync(path.join(__dirname, 'livros.json'));
-    const livros = JSON.parse(dados);
-    res.json(livros);
-  } catch (error) {
-    console.error('Erro ao listar os livros:', error);
-    res.status(500).send('Erro ao listar os livros');
-  }
-});
+// app.get('/', (req, res) => {
+//   try {
+//     const dados = fs.readFileSync(path.join(__dirname, 'livros.json'));
+//     const livros = JSON.parse(dados);
+//     res.json(livros);
+//   } catch (error) {
+//     console.error('Erro ao listar os livros:', error);
+//     res.status(500).send('Erro ao listar os livros');
+//   }
+// });
 
-app.get('/livros', (req, res) => {
+app.get('/', (req, res) => {
   try {
     const dados = fs.readFileSync(path.join(__dirname, 'livros.json'));
     const livros = JSON.parse(dados);
